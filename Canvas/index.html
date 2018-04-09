@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<title>canvas</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+<canvas id="hehe" width="300" height="300"></canvas>
+<script>
+var canvas = document.getElementById("hehe");
+var ctx = canvas.getContext("2d");
+
+var w = 300, h = 300;
+var r = (w>=h?h:w)*1/3, x = w/2, y = h/2;
+
+var color = {
+	gray: "#898989",
+	yellow: "#E7A43D"
+}, lineWidth = {
+	circle: 6,
+	circleEnd: 3,
+	scale: 0.5
+}, font = "8px Microsoft YaHei"
+
+ctx.clearRect(0, 0, w, h);
+
+ctx.beginPath();
+ctx.strokeStyle = color.gray;
+ctx.lineWidth = lineWidth.circle;
+ctx.arc(x, y, r, -Math.PI*1, Math.PI*0, false);
+ctx.stroke();
+
+ctx.beginPath();
+var xrr = x - r, xar = x + r;
+var fillR = lineWidth.circle/2;
+ctx.lineWidth = lineWidth.circleEnd;
+ctx.moveTo(xrr, y);
+ctx.arc(xrr, y, fillR, Math.PI*0, Math.PI*2, false);
+ctx.fillStyle = color.gray;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(xar, y);
+ctx.arc(xar, y, fillR, Math.PI*0, Math.PI*2, false);
+ctx.fillStyle = color.gray;
+ctx.fill();
+
+ctx.beginPath();
+ctx.strokeStyle = color.yellow;
+ctx.lineWidth = lineWidth.circle;
+ctx.arc(x, y, r, -Math.PI*1, -Math.PI*1/2, false);
+ctx.stroke();
+
+var x_yue0_ls = xrr + 5, x_yue0_le =  xrr + 13, 
+	x_yue0_fs = x_yue0_le + 3, x_yue0_fe = x_yue0_fs + 10
+ctx.lineWidth = lineWidth.scale;
+ctx.beginPath();
+ctx.moveTo(x_yue0_ls, y);
+ctx.lineTo(x_yue0_le, y);
+ctx.stroke();
+
+ctx.font = font;  
+ctx.fillStyle = color.yellow;  
+ctx.textAlign = 'center';  
+ctx.textBaseline = 'middle';
+ctx.beginPath();  
+ctx.moveTo(x_yue0_fs, y);  
+ctx.fillText('0月', x_yue0_fe, y); 
+</script>
+</body>
+</html>
