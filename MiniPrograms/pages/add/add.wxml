@@ -1,6 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <!-- <switch bindchange="switchChange" checked="{{Switch}}"/>
-  <text>{{Switch}}</text> -->
-  <canvas canvas-id="clock"/>
-</view>
