@@ -1,8 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/instrumentPanel/instrumentPanel",
-    "pages/add/add"
+    "pages/add/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
