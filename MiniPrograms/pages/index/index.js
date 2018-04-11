@@ -2,7 +2,8 @@ const app = getApp();
 
 Page({
   data: {
-    Switch: false
+    Switch: false,
+    date: '2016-04-11'
   },
   onLoad: function () {
     var self = this;
@@ -17,7 +18,7 @@ Page({
   },
   gotoAdd: function() {
     wx.navigateTo({
-      url: '../add/index',
+      url: '../add/add',
       success: function() {
         wx.showToast({title: '123'});
       },
@@ -31,5 +32,10 @@ Page({
   },
   switchChange: function(e) {
     app.ref.set(e.detail.value ? "1" : "0");
-  }
+  },
+  bindDateChange: function(e) {
+     this.setData({
+       date: e.detail.value
+     })
+   },
 });

@@ -1,6 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <switch bindchange="switchChange" checked="{{Switch}}"/>
-  <text>{{Switch}}</text>
-  <button bindtap='gotoAdd'>add</button>
+	<switch bindchange="switchChange" checked="{{Switch}}"/>
+	<text>{{Switch}}</text>
+	<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+		<view class="picker">
+		当前选择: {{date}}
+		</view>
+	</picker>
+	<button bindtap='gotoAdd'>add</button>
 </view>

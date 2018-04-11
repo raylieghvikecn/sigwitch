@@ -1,9 +1,11 @@
-var Switch = require('./utils/wdSync').ref('Switch');
-var SnTemp = require('./utils/wdSync').ref('SnTemp');
+var sync = require('./utils/wdSync');
+
+var Switch = sync.ref('Switch');
+var SnTemp = sync.ref('SnTemp');
 
 Switch.on("value", function(snapshot) {
 	var Switch = snapshot.val();
-	if(database == null) {
+	if(Switch == null) {
 		console.log('暂时无数据');
 	} else {
 		console.log(Switch);
@@ -11,7 +13,7 @@ Switch.on("value", function(snapshot) {
 });
 SnTemp.on("value", function(snapshot) {
 	var SnTemp = snapshot.val();
-	if(database == null) {
+	if(SnTemp == null) {
 		console.log('暂时无数据');
 	} else {
 		console.log(SnTemp);
